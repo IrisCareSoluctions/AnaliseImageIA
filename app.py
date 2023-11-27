@@ -18,9 +18,25 @@ LEFT_PUPIL = [473]
 RIGHT_PUPIL = [468]
 
 
+def verificar_pastas():
+    if not os.path.exists('images'):
+        os.makedirs('images')
+        print("Pasta 'images' criada com sucesso!")
+    else:
+        print("Pasta 'images' já existe.")
+
+    if not os.path.exists('results'):
+        os.makedirs('results')
+        print("Pasta 'results' criada com sucesso!")
+    else:
+        print("Pasta 'results' já existe.")
+
+
 @app.route('/analise', methods=['POST'])
 def analyze_image():
     image_file = request.files['image']
+
+    verificar_pastas()
 
     if image_file:
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
