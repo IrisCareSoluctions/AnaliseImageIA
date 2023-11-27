@@ -111,8 +111,7 @@ env.bak/
 venv.bak/
 
 #Folders
-/images/**
-/results/**
+
 
 # Spyder project settings
 .spyderproject
@@ -134,3 +133,6 @@ dmypy.json
 
 #images
 *.jpeg
+*.png
+*.jpg
+*.gif
